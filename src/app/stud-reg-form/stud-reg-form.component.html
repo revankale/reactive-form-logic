@@ -1,0 +1,101 @@
+<section class="h-100 bg-dark">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col">
+        <div class="card card-registration my-4">
+          <div class="row g-0">
+            <div class="col-xl-6 d-none d-xl-block">
+              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp"
+                alt="Sample photo" class="img-fluid"
+                style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+            </div>
+            <div class="col-xl-6">
+              <div class="card-body p-md-5 text-black">
+                <h3 class="mb-5 text-uppercase">Student registration form</h3>
+                <form [formGroup]="studentForm">
+                  <div class="row">
+                    <div class="col-md-4 mb-4">
+                      <div class="form-outline">
+                        <input type="text" formControlName="firstName" id="form3Example1m" class="form-control" />
+                        <label class="form-label" for="form3Example1m">First name</label>
+                      </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                      <div class="form-outline">
+                        <input type="text" formControlName="middleName" id="form3Example1n" class="form-control" />
+                        <label class="form-label" for="form3Example1n">middle name</label>
+                      </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                      <div class="form-outline">
+                        <input type="text" formControlName="lastName" id="form3Example1n" class="form-control" />
+                        <label class="form-label" for="form3Example1n">Last name</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 mb-4">
+                      <div class="form-outline">
+                        <input type="text" formControlName="fullName" id="form3Example1m1" class="form-control" />
+                        <label class="form-label" for="form3Example1m1">Full name</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-4 mb-4">
+                      <input type="date" formControlName="dob" id="form3Example8" class="form-control" />
+                      <label class="form-label" for="form3Example8">date of birth</label>
+                    </div>
+                    <div class="col-4 mb-4">
+                      <input type="number" formControlName="age" id="form3Example8" class="form-control" />
+                      <label class="form-label" for="form3Example8">Age</label>
+                    </div>
+                    <div class="col-4 mb-4" [ngClass]="studentForm.controls['licenseNo'].errors?.['required'] ? 'text-danger': '' ">
+                      <input type="text" formControlName="licenseNo" id="form3Example8" class="form-control" />
+                      <label class="form-label" for="form3Example8">License no</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <select class="select form-control" formControlName="country">
+                        <option value="">State country</option>
+                        <option value="USA">USA</option>
+                        <option value="india">india</option>
+                        <option value="shirilanka">shirilanka</option>
+                        <option value="other">other</option>
+                      </select>
+                      <label class="form-label" for="form3Example9">State country</label>
+                    </div>
+                    <div class="col-md-6">
+                      <input type="text" formControlName="state" id="form3Example9" class="form-control" />
+                      <label class="form-label" for="form3Example9">Provide State</label>
+                    </div>
+                  </div>
+                  <div class="row" *ngIf="studentForm.controls['country'].value === 'india'">
+                    <div class="col-md-6 mb-4">
+                      <select class="select form-control" formControlName="identityType">
+                        <option value=""> select identity Proof</option>
+                        <option value="aadhar card">aadhar card</option>
+                        <option value="pan card">pan card</option>
+                        <option value="other">other</option>
+                      </select>
+                      <label class="form-label" for="form3Example9">identity Proof</label>
+                    </div>
+                    <div class="col-md-6">
+                      <input type="text" formControlName="cardNo" id="form3Example9" class="form-control" />
+                      <label class="form-label" for="form3Example9">enter card no</label>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-end pt-3">
+                    <button type="button" class="btn btn-light">Reset all</button>
+                    <button type="button" class="btn btn-warning ms-2">Submit form</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
